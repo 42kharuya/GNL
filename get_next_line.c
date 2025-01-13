@@ -49,7 +49,6 @@ static char *gnl_read(int fd, char *buffer, char **save)
 	while (ft_strchr(*save, '\n') == NULL)
 	{
 		count_byte = read(fd, buffer, BUFFER_SIZE);
-		printf ("save: %s buffer: %s\n", *save, buffer);
 		if (count_byte == -1)
 			return (null_free (save));
 		else if (count_byte == 0)

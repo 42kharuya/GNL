@@ -60,11 +60,12 @@
 // 	return (0);
 // }
 
-int main(void)
-{
-	char *res;
+// int main(void)
+// {
+// 	char *test;
 
-	res = "Hello\0World";
-	res = 'H' + 'e' + 'l' + 'l' + 'o' + '\0' + 'W' + 'o' + 'r' + 'l' + 'd';
-	printf ("res:%s\n", res);
-}
+// 	test = "Hello";
+// 	printf ("test:%s\n", test);
+// 	test = "Hello World";
+// 	printf ("test:%s\n", test);
+// }
