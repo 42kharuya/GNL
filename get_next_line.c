@@ -6,7 +6,7 @@
 /*   By: kharuya <kharuya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:01:30 by kharuya           #+#    #+#             */
-/*   Updated: 2025/01/13 04:54:55 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/01/14 07:13:32 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char *make_line(char **save, ssize_t count_byte)
 
 	if (count_byte == 0)
 	{
-		if(!save)
+		if(**save == '\0')
 			return (null_free(save));
 		return (*save);
 	}
