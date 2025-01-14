@@ -70,3 +70,33 @@
 // 	printf ("test:%s\n", test);
 // }
 
+// int main (void)
+// {
+// 	char *res;
+
+// 	res = (char *)malloc(sizeof(char) * (5 + 1));
+// 	if (!res)
+// 		return (1);
+// 	strcpy (res, "Hello");
+// 	printf ("first res: %s\n", res);
+// 	strcpy (res, "World");
+// 	printf ("second res: %s\n", res);
+// 	free (res);
+// }
+
+int main (void)
+{
+	char *res;
+
+	res = (char *)malloc(sizeof(char) * (5 + 1));
+	if (!res)
+		return (-1);
+	strcpy (res, "Hello");
+	printf ("first res: %s\n", res);
+	res = (char *)malloc(sizeof(char) * (11 + 1));
+	if (!res)
+		return (-1);
+	strcpy (res, "Hello World");
+	printf ("first res: %s\n", res);
+	free (res);
+}
