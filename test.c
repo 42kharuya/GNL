@@ -1,7 +1,9 @@
-#include "get_next_line.h"
+// #include "get_next_line.h"
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 // int main (void)
 // {
@@ -84,19 +86,39 @@
 // 	free (res);
 // }
 
-int main (void)
-{
-	char *res;
+// int main (void)
+// {
+// 	char *res;
 
-	res = (char *)malloc(sizeof(char) * (5 + 1));
-	if (!res)
-		return (-1);
-	strcpy (res, "Hello");
-	printf ("first res: %s\n", res);
-	res = (char *)malloc(sizeof(char) * (11 + 1));
-	if (!res)
-		return (-1);
-	strcpy (res, "Hello World");
-	printf ("first res: %s\n", res);
-	free (res);
-}
+// 	res = (char *)malloc(sizeof(char) * (5 + 1));
+// 	if (!res)
+// 		return (-1);
+// 	strcpy (res, "Hello");
+// 	printf ("first res: %s\n", res);
+// 	res = (char *)malloc(sizeof(char) * (11 + 1));
+// 	if (!res)
+// 		return (-1);
+// 	strcpy (res, "Hello World");
+// 	printf ("first res: %s\n", res);
+// 	free (res);
+// }
+
+// void test_func(char *res)
+// {
+// 	strcpy(res, "HHHHHHHHHHHHHHHHHHHH");
+// 	printf ("in the func:%s\n", res);
+// }
+
+// int main(void)
+// {
+// 	char *res;
+
+// 	res = (char *)malloc(sizeof(char) * (11 + 1));
+// 	if (!res)
+// 		return (-1);
+// 	strcpy (res, "Hello World");
+// 	printf ("before: %s\n", res);
+// 	test_func(res);
+// 	printf ("after: %s\n", res);
+// }
+
