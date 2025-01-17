@@ -6,7 +6,7 @@
 /*   By: kharuya <kharuya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:01:35 by kharuya           #+#    #+#             */
-/*   Updated: 2024/12/31 16:41:55 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/01/16 16:39:08 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 // buffer
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
+#  define BUFFER_SIZE 42
 # endif
 
 // prototype

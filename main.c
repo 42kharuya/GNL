@@ -9,13 +9,14 @@ int main()
 	//  int fd2,fd3; //3つのファイルを指定するために、fdを３つ宣言しておく
 	//  size_t i;
 
-	fd = open("test/test4.txt", O_RDONLY);//fd はopen関数の戻り値
+	fd = open("test/test5.txt", O_RDONLY);//fd はopen関数の戻り値
+	printf ("fd : %d\n", fd);
 	while (1)
 	{
 		res = get_next_line(fd);
 		if (!res)
 		{
-			printf ("res : %s\n", res);
+			printf ("res : %s", res);
 			break;
 		}
 		printf ("res : %s", res);
