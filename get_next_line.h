@@ -6,7 +6,7 @@
 /*   By: kharuya <kharuya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:01:35 by kharuya           #+#    #+#             */
-/*   Updated: 2025/01/16 16:39:08 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/01/17 17:13:08 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 // include
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
 
 // buffer
 # ifndef BUFFER_SIZE

@@ -6,24 +6,23 @@
 /*   By: kharuya <kharuya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 23:01:30 by kharuya           #+#    #+#             */
-/*   Updated: 2025/01/17 11:13:50 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/01/18 12:10:35 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
-static char *null_free(char **save)
+static	char	*null_free(char **save)
 {
 	free (*save);
 	*save = NULL;
 	return (NULL);
 }
 
-static char *make_ans(char *save, ssize_t count_byte)
+static	char	*make_ans(char *save, ssize_t count_byte)
 {
-	char *ans;
-	int i;
+	char	*ans;
+	int		i;
 
 	ans = (char *)malloc(sizeof(char) * (count_byte + 1));
 	if (!ans)
@@ -35,10 +34,10 @@ static char *make_ans(char *save, ssize_t count_byte)
 	return (ans);
 }
 
-static char *make_line(char **save, ssize_t count_byte)
+static	char	*make_line(char **save, ssize_t count_byte)
 {
-	char *ans;
-	char *tmp;
+	char	*ans;
+	char	*tmp;
 
 	if (count_byte == 0)
 	{
@@ -51,7 +50,7 @@ static char *make_line(char **save, ssize_t count_byte)
 	ans = make_ans(*save, count_byte);
 	if (!ans)
 		return (null_free(save));
-	tmp =  ft_substr(*save, count_byte, BUFFER_SIZE);
+	tmp = ft_substr(*save, count_byte, BUFFER_SIZE);
 	if (!tmp)
 		return (null_free(save));
 	null_free (save);
@@ -59,10 +58,10 @@ static char *make_line(char **save, ssize_t count_byte)
 	return (ans);
 }
 
-static char *gnl_read(int fd, char *buffer, char **save)
+static	char	*gnl_read(int fd, char *buffer, char **save)
 {
-	ssize_t count_byte;
-	char 	*tmp;
+	ssize_t	count_byte;
+	char	*tmp;
 
 	count_byte = 0;
 	while (ft_strchr(*save, '\n') == NULL)
@@ -82,18 +81,18 @@ static char *gnl_read(int fd, char *buffer, char **save)
 	return (make_line(save, ft_strchr(*save, '\n') - *save + 1));
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	static	char	*save;
-	char 			*buffer;
-	char			*result;
+	static char	*save;
+	char		*buffer;
+	char		*result;
 
-	if(fd < 0|| BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if(!save)
+	if (!save)
 	{
 		save = ft_strdup("");
-		if(!save)
+		if (!save)
 			return (NULL);
 	}
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
@@ -104,4 +103,24 @@ char *get_next_line(int fd)
 	return (result);
 }
 
-// buffer, save
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*res;
+
+// 	fd = open ("test.txt", O_RDONLY);
+// 	printf ("fd : %d\n", fd);
+// 	while (1)
+// 	{
+// 		res = get_next_line(fd);
+// 		if (!res)
+// 		{
+// 			printf ("\nres : n%s", res);
+// 			break ;
+// 		}
+// 		printf ("res : %s", res);
+// 		free (res);
+// 	}
+// 	close(fd);
+// 	return (0);
+// }

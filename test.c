@@ -1,75 +1,15 @@
-// #include "get_next_line.h"
 #include <stdio.h>
-#include <fcntl.h>
 #include <string.h>
-#include <stdint.h>
 #include <stdlib.h>
 
-// int main (void)
+// void pointer_test(char **res)
 // {
-// 	// ssize_t count_byte1;
-// 	// ssize_t count_byte2;
-// 	int 	fd;
-// 	char	*res1;
-// 	char	*res2;
-
-// 	res1 = (char *)malloc(sizeof(char) * (1 + 1));
-// 	res2 = (char *)malloc(sizeof(char) * (1 + 1));
-// 	fd = open("test/test1.txt", O_RDONLY);
-// 	read(fd, res1, 1);
-// 	read(fd, res2, 1);
-// 	res1[1] = '\0';
-// 	res2[1] = '\0';
-// 	printf ("%s\n", res1);
-// 	printf ("%s\n", res2);
-// 	close(fd);
-// 	return (0);
-// }
-
-
-// void	change_value(char **test)
-// {
-// 	*test = "Good morning";
-// 	printf ("chenge_value's test: %s\n", *test);
-// }
-
-// int main (void)
-// {
-// 	char *test;
-
-// 	test = "Hello";
-// 	printf ("before executing charge_value: %s\n", test);
-// 	change_value(&test);
-// 	printf ("after executing charge_value: %s\n", test);
-
-// }
-
-// char	*test_initial(int i)
-// {
-// 	char *res;
-
-// 	if (!i)
-// 		return (NULL);
-// 	res = "Hello";
-// 	return(res);
-// }
-
-// int main(void)
-// {
-// 	printf ("result:%s\n", test_initial(0));
-// 	// printf ("result:%s\n", test_initial(10));
-
-// 	return (0);
-// }
-
-// int main(void)
-// {
-// 	char *test;
-
-// 	test = "Hello";
-// 	printf ("test:%s\n", test);
-// 	test = "Hello World";
-// 	printf ("test:%s\n", test);
+// 	free (*res);
+// 	*res = (char *)malloc(sizeof(char) * (11 + 1));
+// 	if (!(*res))
+// 		return ;
+// 	*res = strcpy(*res, "Hello World");
+// 	printf ("in the func : %s\n", *res);
 // }
 
 // int main (void)
@@ -79,65 +19,38 @@
 // 	res = (char *)malloc(sizeof(char) * (5 + 1));
 // 	if (!res)
 // 		return (1);
-// 	strcpy (res, "Hello");
-// 	printf ("first res: %s\n", res);
-// 	strcpy (res, "World");
-// 	printf ("second res: %s\n", res);
-// 	free (res);
+// 	res = strcpy(res, "Hello");
+// 	printf ("before func : %s\n", res);
+// 	pointer_test (&res);
+// 	printf ("after func : %s\n", res);
 // }
 
-// int main (void)
-// {
-// 	char *res;
-
-// 	res = (char *)malloc(sizeof(char) * (5 + 1));
-// 	if (!res)
-// 		return (-1);
-// 	strcpy (res, "Hello");
-// 	printf ("first res: %s\n", res);
-// 	res = (char *)malloc(sizeof(char) * (11 + 1));
-// 	if (!res)
-// 		return (-1);
-// 	strcpy (res, "Hello World");
-// 	printf ("first res: %s\n", res);
-// 	free (res);
+// void modifyString(char *str) {
+//     str = "World";
+// 	printf ("%s\n", str);
 // }
 
-// void test_func(char *res)
-// {
-// 	strcpy(res, "HHHHHHHHHHHHHHHHHHHH");
-// 	printf ("in the func:%s\n", res);
+// int main() {
+//     char *str = "Hello";
+//     modifyString(str);
+//     printf("%s\n", str);  // "Hello"が出力される
 // }
 
-// int main(void)
-// {
-// 	char *res;
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 
-// 	res = (char *)malloc(sizeof(char) * (11 + 1));
-// 	if (!res)
-// 		return (-1);
-// 	strcpy (res, "Hello World");
-// 	printf ("before: %s\n", res);
-// 	test_func(res);
-// 	printf ("after: %s\n", res);
+// void allocateString(char *str, const char *value) {
+//     str = (char *)malloc(strlen(value) + 1);  // メモリ確保
+//     if (str != NULL) {
+//         strcpy(str, value);  // 値をコピー
+//     }
 // }
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	if (!str)
-		return (0);
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int main (void)
-{
-	 char *res;
-
-	res = (char*)NULL;
-	printf ("res len: %zu\n", ft_strlen(res));
-}
+// int main() {
+//     char *str = NULL;
+//     allocateString(str, "Hello, World!");
+//     printf("%s\n", str);  // "Hello, World!"が出力される
+//     free(str);  // メモリ解放
+//     return 0;
+// }
